@@ -1,0 +1,46 @@
+name: news_pulse
+description: A News application for TopNext
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.4.0
+
+isar_version: &isar_version 3.1.0+1
+
+dependencies:
+  cached_network_image: ^3.3.1
+  envied: ^0.5.4+1
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  fpdart: ^1.1.0
+  freezed_annotation: ^2.4.3
+  go_router: ^14.2.0
+  http: ^1.2.1
+  internet_connection_checker_plus: ^2.5.0
+  intl: ^0.19.0
+  isar: *isar_version
+  isar_flutter_libs: *isar_version
+  json_annotation: ^4.9.0
+  path_provider: ^2.1.3
+  riverpod: ^2.5.1
+  stack_trace: ^1.11.1
+
+dev_dependencies:
+  build_runner: ^2.4.11
+  envied_generator: ^0.5.4+1
+  flutter_test:
+    sdk: flutter
+  freezed: ^2.5.2
+  isar_generator: *isar_version
+  json_serializable: ^6.8.0
+  mocktail: ^1.0.4
+  very_good_analysis: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
