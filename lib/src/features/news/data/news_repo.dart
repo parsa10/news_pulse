@@ -40,7 +40,8 @@ class NewsRepo with RefDep, EnvDep, HttpClientDep, RequestProcessor {
               'q': category,
               'apiKey': env.apiKey,
               'sortBy': 'publishedAt',
-              // TODO: change this to 1
+              // In the specification it was said to be 1 day ago but here
+              // 10 days is used as 1 day may return no item for articles.
               'from': DateTime.now()
                   .subtract(const Duration(days: 10))
                   .toIso8601String(),

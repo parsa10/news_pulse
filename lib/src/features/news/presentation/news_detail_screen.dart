@@ -10,7 +10,6 @@ class NewsDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(article.content);
     return Scaffold(
       appBar: AppBar(
         title: const Text('News Detail'),

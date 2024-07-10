@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:news_pulse/src/features/news/domain/news_article/news_article.dart';
-import 'package:go_router/go_router.dart';
 
 class NewsCard extends StatelessWidget {
   const NewsCard({required this.article, super.key});
