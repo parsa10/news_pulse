@@ -10,6 +10,7 @@ class NewsDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(article.content);
     return Scaffold(
       appBar: AppBar(
         title: const Text('News Detail'),
@@ -26,6 +27,7 @@ class NewsDetailScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   child: CachedNetworkImage(
                     imageUrl: article.imageUrl,
+                    cacheKey: article.url,
                     height: 200,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -48,18 +50,27 @@ class NewsDetailScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'By ${article.author}',
-                    style: const TextStyle(
-                      fontSize: 14,
-                      fontStyle: FontStyle.italic,
+                  Expanded(
+                    flex: 3,
+                    child: Text(
+                      'By ${article.author}',
+                      maxLines: 1,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontStyle: FontStyle.italic,
+                      ),
                     ),
                   ),
-                  Text(
-                    DateFormat.yMMMd().format(article.publishedAt),
-                    style: const TextStyle(
-                      fontSize: 14,
-                      fontStyle: FontStyle.italic,
+                  Expanded(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        DateFormat.yMMMd().format(article.publishedAt),
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
                     ),
                   ),
                 ],
